@@ -11,7 +11,7 @@ namespace BakerySales.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("new vendor");
+      Vendor newVendor = new Vendor("new vendor", "new description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -19,9 +19,18 @@ namespace BakerySales.Tests
     public void GetName_ReturnsName_String()
     {
       string name = "new vendor";
-      Vendor newVendor = new Vendor(name);
-      
+      string description = "new description";
+      Vendor newVendor = new Vendor(name, description);
       Assert.AreEqual(name, newVendor.Name);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "new description";
+      string name = "new vendor";
+      Vendor newVendor = new Vendor(name, description);
+      Assert.AreEqual(description, newVendor.Description);
     }
   }
 }
