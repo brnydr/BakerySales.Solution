@@ -1,4 +1,4 @@
-# _Bakerys Sales Management_
+# _Bakery Sales Management_
 
 #### By _**Brian Yoder**_
 
