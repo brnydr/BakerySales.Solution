@@ -6,8 +6,12 @@ using System;
 namespace BakerySales.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -48,6 +52,15 @@ namespace BakerySales.Tests
       DateTime date = new DateTime(2021, 1, 1);
       Order newOrder = new Order("title", "description", 9, date);
       Assert.AreEqual(date, newOrder.Date);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      DateTime date = new DateTime(2021, 1, 1);
+      Order newOrder = new Order("title", "description", 9, date);
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
     }
 
   }

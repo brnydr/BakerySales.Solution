@@ -9,12 +9,21 @@ namespace BakerySales.Models
     public string Description { get; set; }
     public int Price { get; set; }
     public DateTime Date { get; set; }
+    private static int _idCounter = 1;
+    public int Id { get; }
     public Order(string title, string description, int price, DateTime date)
     {
       Title = title;
       Description = description;
       Price = price;
       Date = date;
+      _idCounter++;
+      Id = _idCounter;
+    }
+
+    public static void ClearAll()
+    {
+      _idCounter = 0;
     }
   }
 }
