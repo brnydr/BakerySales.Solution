@@ -9,7 +9,8 @@ namespace BakerySales.Models
     public string Description { get; set; }
     public int Price { get; set; }
     public DateTime Date { get; set; }
-    private static int _idCounter = 1;
+    private static List<Order> _instances = new List<Order> {};
+    private static int _idCounter = 0;
     public int Id { get; }
     public Order(string title, string description, int price, DateTime date)
     {
@@ -19,10 +20,17 @@ namespace BakerySales.Models
       Date = date;
       _idCounter++;
       Id = _idCounter;
+      _instances.Add(this);
+    }
+
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId - 1];
     }
 
     public static void ClearAll()
     {
+      _instances.Clear();
       _idCounter = 0;
     }
   }

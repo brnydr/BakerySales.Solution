@@ -63,5 +63,14 @@ namespace BakerySales.Tests
       Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsOrder_Order()
+    {
+      DateTime date = new DateTime(2021, 1, 1);
+      Order newOrder1 = new Order("title", "description", 9, date);
+      Order newOrder2 = new Order("title", "description", 10, date);
+      Assert.AreEqual(newOrder2, Order.Find(2));
+    }
+
   }
 }

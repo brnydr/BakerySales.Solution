@@ -1,1 +1,22 @@
- 
+ @{
+  Layout = "_Layout";
+ }
+
+  <div class="row">
+    <div class="col-md-12">
+    <h2>Order Details</h2>
+    <table class="table">
+      <tr>
+      <th>Order ID</th>
+      <th>Order Date</th>
+      <th>Order Total</th>
+      <th>Order Status</th>
+      </tr>
+      <tr>
+      <td>@Model.OrderId</td>
+      <td>@Model.OrderDate</td>
+      <td>@Model.OrderTotal</td>
+      <td>@Model.OrderStatus</td>
+      </tr>
+    </table>
+    </div>
