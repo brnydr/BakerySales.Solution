@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace BakerySales.Models
@@ -7,11 +8,13 @@ namespace BakerySales.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
-    public Order(string title, string description, int price)
+    public DateTime Date { get; set; }
+    public Order(string title, string description, int price, DateTime date)
     {
       Title = title;
       Description = description;
       Price = price;
+      Date = date;
     }
   }
 }
